@@ -1,6 +1,6 @@
 ## Github homepage 
 
-> Jan Bittendorf
+> Jan Bittendorf | 03.01.2022 
 
 ---
 

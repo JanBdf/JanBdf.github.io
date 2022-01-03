@@ -1,1 +1,1 @@
-pandoc index.md -o ../index.html ; pause
+pandoc index.md -o ../index.html ; sleep 0.5

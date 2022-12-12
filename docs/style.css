@@ -3,9 +3,11 @@
 body {
     margin: 0px;
 
-    background-repeat: no-repeat;
-    background: fixed;
-    background-image: url("https://www.estidia.eu/wp-content/uploads/2018/04/Savin-NY-Website-Background-Web.jpg");
+    background: url("https://www.estidia.eu/wp-content/uploads/2018/04/Savin-NY-Website-Background-Web.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .button-social {
@@ -16,7 +18,7 @@ body {
 }
 
 .area-links {
-    margin: 5px;
+    margin: 15px;
     padding: 5px;
     vertical-align: middle;
     border-radius: 10px;

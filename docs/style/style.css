@@ -1,0 +1,89 @@
+@font-face { font-family: JetBrainsMono; font-family: monospace; src: url("../resc/font/JetBrainsMono-Regular.ttf"); } 
+
+body {
+    margin: 0;
+    padding: 15px;
+
+    background: url("../resc/img/background.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+h1 {
+    margin: 3px;
+}
+
+.button-social {
+    width:30px; 
+    height:30px;
+    
+    padding: 5px;
+}
+
+.area-links {
+    padding: 5px;
+    width: fit-content;
+    vertical-align: middle;
+
+    border-radius: 10px;
+
+    background-color: lightgray;
+}
+
+.title {
+    text-align: center;
+    font-family: "JetBrainsMono";
+}
+
+.button-top {
+    position: fixed;
+    left: 15px;
+    bottom: 15px;
+
+    text-align: center;
+    text-decoration: none;
+
+    width: 50px;
+    padding: 5px;
+
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    border-radius: 20px;
+}
+
+.area-texts {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.area-texts > * {
+    flex: 1;
+    min-width: 600px;
+}
+
+.textbox-outer {
+    height: fit-content;
+
+    border-radius: 30px;
+    border: 5px;
+    border-color: gray;
+
+    padding: 10px;
+    margin: 20px;
+
+    opacity: 80%;
+
+    background-color: rgba(211, 211, 211, 0.5);
+}
+
+.textbox-inner {
+    border-radius: 20px;
+
+    padding: 10px;
+
+    background-color: rgba(128, 128, 128, 0.5);
+}

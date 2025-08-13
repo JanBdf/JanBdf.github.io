@@ -1,4 +1,4 @@
-@font-face { font-family: JetBrainsMono; font-family: monospace; src: url("../resc/font/JetBrainsMono-Regular.ttf"); } 
+@font-face { font-family: JetBrainsMono; font-family: monospace; src: url("../resc/font/JetBrainsMono-Regular.ttf"); }
 
 body {
     margin: 0;
@@ -37,7 +37,7 @@ body {
 
 .section {
     background: linear-gradient(#151515, #222222, #151515);
-    min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     align-items: center;
 }
@@ -45,4 +45,12 @@ body {
 .centered {
     margin: auto;
     width: fit-content;
+}
+
+.sidebar * {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: white;
+    border-radius: 10%;
 }

@@ -4,16 +4,14 @@ function mouseCallback(evt) {
     var dist = mouse_diag / Math.sqrt(Math.pow(window.innerWidth, 2) + Math.pow(window.innerHeight, 2));
     nav.style.opacity = String(Math.max(1 - dist, 0.2));
 }
+function navClickCallback(evt) {
+    var nav = document.querySelector(".sidebar");
+    nav.style.visibility = "hidden";
+}
 function oncomplete() {
     document.addEventListener('mousemove', mouseCallback);
-    var text_container = document.querySelector(".title-text");
-    text_container.childNodes.forEach(function (node) {
-        if (node instanceof HTMLElement) {
-            node.addEventListener('click', function () {
-                node.style.visibility = 'hidden';
-            });
-        }
-    });
+    var nav = document.querySelector(".sidebar");
+    nav.addEventListener("click", navClickCallback);
 }
 function init() {
     switch (document.readyState) {

@@ -7,18 +7,16 @@ function mouseCallback(evt: MouseEvent): void {
     nav.style.opacity = String(Math.max(1 - dist, 0.2));
 }
 
+function navClickCallback(evt: MouseEvent): void {
+    const nav: HTMLElement = document.querySelector(".sidebar");
+    nav.style.visibility = "hidden";
+}
+
 function oncomplete(): void {
     document.addEventListener('mousemove', mouseCallback);
+    const nav: HTMLElement = document.querySelector(".sidebar");
 
-    const text_container: Element = document.querySelector(".title-text");
-
-    text_container.childNodes.forEach(node => {
-        if (node instanceof HTMLElement) {
-            node.addEventListener('click', (): void => {
-                node.style.visibility = 'hidden';
-            });
-        }
-    });
+    nav.addEventListener("click", navClickCallback)
 }
 
 function init(): void {

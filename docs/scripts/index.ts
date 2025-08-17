@@ -1,22 +1,30 @@
 function mouseCallback(evt: MouseEvent): void {
-    const nav: HTMLElement = document.querySelector(".sidebar");
+    let movinghead_left: HTMLElement = document.querySelector(".left .movinghead-head")
+    let bounds = movinghead_left.getBoundingClientRect();
+    let middle_x = bounds.left + 0.5 * bounds.width
+    let middle_y = bounds.top + 0.5 * bounds.height
+    let delta_x = evt.clientX - middle_x;
+    let delta_y = evt.clientY - middle_y;
+    let angle = Math.atan(delta_x / delta_y);
+    console.log(delta_x, delta_y, angle);
 
-    let mouse_diag: number = Math.sqrt(evt.clientY ** 2 + evt.clientX ** 2);
-    let dist: number = mouse_diag / Math.sqrt(window.innerWidth ** 2 + window.innerHeight ** 2);
+    let actual_angle: number;
+    if (delta_y > 0) {
+        actual_angle = -angle;
+    } else {
+        actual_angle = Math.PI - angle;
+    }
 
-    nav.style.opacity = String(Math.max(1 - dist, 0.2));
-}
+    movinghead_left.style.transform = `rotate(${actual_angle}rad)`
 
-function navClickCallback(evt: MouseEvent): void {
-    const nav: HTMLElement = document.querySelector(".sidebar");
-    nav.style.visibility = "hidden";
+    let line: HTMLElement = document.querySelector('.line');
+    line.style.top = middle_y + 'px';
+    line.style.left = middle_x + 'px';
+    line.style.transform = `rotate(${actual_angle}rad)`
 }
 
 function oncomplete(): void {
     document.addEventListener('mousemove', mouseCallback);
-    const nav: HTMLElement = document.querySelector(".sidebar");
-
-    nav.addEventListener("click", navClickCallback)
 }
 
 function init(): void {

@@ -24,7 +24,7 @@ function mouseCallback(evt: MouseEvent): void {
 }
 
 function oncomplete(): void {
-    document.addEventListener('mousemove', mouseCallback);
+    // document.addEventListener('mousemove', mouseCallback);
 }
 
 function init(): void {

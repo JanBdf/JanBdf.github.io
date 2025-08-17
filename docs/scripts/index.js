@@ -21,7 +21,7 @@ function mouseCallback(evt) {
     line.style.transform = "rotate(".concat(actual_angle, "rad)");
 }
 function oncomplete() {
-    document.addEventListener('mousemove', mouseCallback);
+    // document.addEventListener('mousemove', mouseCallback);
 }
 function init() {
     switch (document.readyState) {

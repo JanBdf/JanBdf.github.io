@@ -1,42 +1,31 @@
-function mouseCallback(evt: MouseEvent): void {
-    let movinghead_left: HTMLElement = document.querySelector(".left .movinghead-head")
-    let bounds = movinghead_left.getBoundingClientRect();
-    let middle_x = bounds.left + 0.5 * bounds.width
-    let middle_y = bounds.top + 0.5 * bounds.height
-    let delta_x = evt.clientX - middle_x;
-    let delta_y = evt.clientY - middle_y;
-    let angle = Math.atan(delta_x / delta_y);
-    console.log(delta_x, delta_y, angle);
+import * as mh from "./lib/movinghead.js";
 
-    let actual_angle: number;
-    if (delta_y > 0) {
-        actual_angle = -angle;
-    } else {
-        actual_angle = Math.PI - angle;
-    }
+function update(_: Event | null = null): void {
+    let text_element: HTMLElement = document.querySelector(".text-thingo");
+    let text_area = text_element.getBoundingClientRect();
 
-    movinghead_left.style.transform = `rotate(${actual_angle}rad)`
-
-    let line: HTMLElement = document.querySelector('.line');
-    line.style.top = middle_y + 'px';
-    line.style.left = middle_x + 'px';
-    line.style.transform = `rotate(${actual_angle}rad)`
+    mh.movingheads.forEach((movinghead: mh.Movinghead) => {
+        // movinghead.pointTo((text_area.left + 0.5 * text_area.width), (text_area.top + 0.5 * text_area.height));
+    });
 }
 
-function oncomplete(): void {
-    document.addEventListener('mousemove', mouseCallback);
+function onInputChange(e: InputEvent): void {
+    let target: HTMLInputElement = e.currentTarget as HTMLInputElement;
+    let value: number = parseInt(target.value);
+    mh.movingheads.forEach((movinghead: mh.Movinghead) => {
+        movinghead.setBeamAngle(value / 1000 * 90);
+    });
 }
 
-function init(): void {
-    switch (document.readyState) {
-        case "loading":
-            break;
-        case "complete":
-            oncomplete();
-            break;
-        case "interactive":
-            break;
-    }
+function main(): void {
+    // mh.init();
+    //
+    // window.addEventListener('resize', update);
+    // window.addEventListener('click', update);
+
+    // document.querySelector("#slider").addEventListener("input", onInputChange);
+
+    // update();
 }
 
-document.addEventListener("readystatechange", init);
+document.addEventListener("DOMContentLoaded", main);

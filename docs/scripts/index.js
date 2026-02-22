@@ -1,37 +1,24 @@
-function mouseCallback(evt) {
-    var movinghead_left = document.querySelector(".left .movinghead-head");
-    var bounds = movinghead_left.getBoundingClientRect();
-    var middle_x = bounds.left + 0.5 * bounds.width;
-    var middle_y = bounds.top + 0.5 * bounds.height;
-    var delta_x = evt.clientX - middle_x;
-    var delta_y = evt.clientY - middle_y;
-    var angle = Math.atan(delta_x / delta_y);
-    console.log(delta_x, delta_y, angle);
-    var actual_angle;
-    if (delta_y > 0) {
-        actual_angle = -angle;
-    }
-    else {
-        actual_angle = Math.PI - angle;
-    }
-    movinghead_left.style.transform = "rotate(".concat(actual_angle, "rad)");
-    var line = document.querySelector('.line');
-    line.style.top = middle_y + 'px';
-    line.style.left = middle_x + 'px';
-    line.style.transform = "rotate(".concat(actual_angle, "rad)");
+import * as mh from "./lib/movinghead.js";
+function update(_ = null) {
+    let text_element = document.querySelector(".text-thingo");
+    let text_area = text_element.getBoundingClientRect();
+    mh.movingheads.forEach((movinghead) => {
+        // movinghead.pointTo((text_area.left + 0.5 * text_area.width), (text_area.top + 0.5 * text_area.height));
+    });
 }
-function oncomplete() {
-    document.addEventListener('mousemove', mouseCallback);
+function onInputChange(e) {
+    let target = e.currentTarget;
+    let value = parseInt(target.value);
+    mh.movingheads.forEach((movinghead) => {
+        movinghead.setBeamAngle(value / 1000 * 90);
+    });
 }
-function init() {
-    switch (document.readyState) {
-        case "loading":
-            break;
-        case "complete":
-            oncomplete();
-            break;
-        case "interactive":
-            break;
-    }
+function main() {
+    // mh.init();
+    //
+    // window.addEventListener('resize', update);
+    // window.addEventListener('click', update);
+    // document.querySelector("#slider").addEventListener("input", onInputChange);
+    // update();
 }
-document.addEventListener("readystatechange", init);
+document.addEventListener("DOMContentLoaded", main);

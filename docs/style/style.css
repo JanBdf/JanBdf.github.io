@@ -6,29 +6,11 @@ body {
     color: #fdfbf4;
 }
 
-.container {
-    display: flex;
-    width: min-content;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.container * {
-    flex-grow: 1;
-    text-align: center;
-    font-size: 24rem;
-    font-family: JetBrainsMono, serif;
-    margin: 0;
-}
-
-.container *:hover {
-    color: #b30000;
-}
-
 .header {
     min-height: 100dvh;
+    background: linear-gradient(180deg, black, #201926);
 
-    background: radial-gradient(ellipse at center, #000f35 1%, #151515 100%);
+    display: block;
 
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -36,88 +18,54 @@ body {
     background-size: cover;
 }
 
-.section-wrapper {
-    height: 500dvh;
-}
-
-.section {
-    background: linear-gradient(#151515, #222222, #151515);
-    height: 100dvh;
+.container {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    position: sticky;
-    top: 0;
+    flex-direction: row;
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.text_thingo {
-    width: 50%;
-    text-align: justify;
-    word-wrap: break-word;
+.container > * {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 14rem;
+    font-family: JetBrainsMono, serif;
+    margin: 0;
 }
 
-.movinghead {
-    background: #001f2c;
-    width: 4%;
-
-    position: absolute;
-    bottom: 0;
+.container > *:hover {
+    /*color: #b30000;*/
 }
 
-.movinghead-base {
+.title {
+    color: white;
+}
+
+.braces {
+    color: #292031;
+}
+
+.slash {
+    color: #B70265;
+    text-decoration: none;
+}
+
+.centered {
     width: 100%;
-    rotate: 180deg;
+    height: 100%;
 
-    position: absolute;
-    z-index: 1;
-    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-@keyframes rotate {
-    0% { transform: rotate(60deg); }
-    50% { transform: rotate(300deg); }
-    100% { transform: rotate(60deg); }
+.block {
+    width: 90%;
+    height: 60%;
+    min-height: 50px;
+
+    border-radius: 10px;
+
+    background: rgb(255, 255, 255);
 }
-
-.movinghead-head {
-    width: 85%;
-    margin-left: 10%;
-    transform-origin: 50% 42%;
-    /*animation: rotate linear 2s infinite;*/
-
-    position: absolute;
-    z-index: 0;
-    bottom: 10px;
-}
-
-.left .movinghead-head {
-    transform: rotate(220deg);
-}
-
-.right .movinghead-head {
-    transform: rotate(140deg);
-}
-
-.left {
-    left: 5%;
-}
-
-.right {
-    right: 5%;
-}
-
-.line {
-    height: 500px;
-    width: 2px;
-
-    background: red;
-    position: absolute;
-
-    top: 97.3%;
-    left: 5%;
-
-    transform-origin: 50% 0;
-    transform: rotate(-50deg);
-}
-

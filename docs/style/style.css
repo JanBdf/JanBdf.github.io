@@ -1,16 +1,64 @@
-@font-face { font-family: JetBrainsMono; font-family: monospace; src: url("../resc/font/JetBrainsMono-Regular.ttf"); }
+@font-face {
+    font-family: JetBrainsMono;
+    src: url("../resc/font/JetBrainsMono-Regular.ttf");
+}
+
+:root {
+    --halogen: rgb(255, 190, 126);
+}
+
+* {
+    box-sizing: border-box;
+}
 
 body {
     margin: 0;
+    color: #000000;
+}
 
-    color: #fdfbf4;
+.greeter-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: .12;
+    background: radial-gradient(ellipse 320px 320px at 30% 35%,transparent 48%,rgba(42,42,38,.25) 49%,rgba(42,42,38,.25) 50%,transparent 51%), radial-gradient(ellipse 260px 260px at 32% 38%,transparent 48%,rgba(42,42,38,.20) 49%,rgba(42,42,38,.20) 50%,transparent 51%), radial-gradient(ellipse 420px 420px at 65% 55%,transparent 48%,rgba(42,42,38,.22) 49%,rgba(42,42,38,.22) 50%,transparent 51%), radial-gradient(ellipse 350px 350px at 63% 52%,transparent 48%,rgba(42,42,38,.18) 49%,rgba(42,42,38,.18) 50%,transparent 51%), radial-gradient(ellipse 540px 540px at 50% 60%,transparent 48%,rgba(42,42,38,.15) 49%,rgba(42,42,38,.15) 50%,transparent 51%);
+}
+
+.greeter-bg .g1,
+.greeter-bg .g2{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(90px);
+    opacity:.45;
+}
+.greeter-bg .g1{
+    width:550px;
+    height:700px;
+    rotate: 45deg;
+    top:-25%;
+    left:-10%;
+    background: var(--halogen);
+}
+.greeter-bg .g2{
+    width:550px;
+    height:700px;
+    rotate: -45deg;
+    bottom:-7%;
+    right:-10%;
+    background: var(--halogen);
 }
 
 .header {
-    min-height: 100dvh;
-    background: linear-gradient(180deg, black, #201926);
+    height: 100dvh;
+    background: #e8e4da;
 
-    display: block;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-family: "JetBrainsMono", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+
+    color: #807e77;
+    /*border-bottom: 3px solid #807e77;*/
 
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -24,26 +72,29 @@ body {
     width: max-content;
     margin-left: auto;
     margin-right: auto;
+    /*border: 1px solid white;*/
 }
 
 .container > * {
     flex-grow: 1;
-    text-align: center;
-    font-size: 14rem;
-    font-family: JetBrainsMono, serif;
+    font-size: min(16vw, 12rem);
     margin: 0;
 }
 
-.container > *:hover {
-    /*color: #b30000;*/
+.title {
+    color: #2a2a26;
+    font-weight: bolder;
 }
 
-.title {
-    color: white;
+.outline { /* unused */
+    -webkit-text-stroke: 1px #c6c6c6;
+    color: transparent;
 }
 
 .braces {
-    color: #292031;
+    /*color: #a2b2b6;*/
+    -webkit-text-stroke: 1px #807e77;
+    color: transparent;
 }
 
 .slash {
@@ -52,20 +103,68 @@ body {
 }
 
 .centered {
-    width: 100%;
-    height: 100%;
+    margin: auto;
+
+    width: fit-content;
+    height: fit-content;
+
+    box-sizing: border-box;
+    padding: 0.8rem;
 
     display: flex;
+    flex-direction: column;
+}
+
+.block {
+    width: 100%;
+    height: 75px;
+    position: sticky;
+    top: 0.8rem;
+
+    font-size: min(3vw, 2rem);;
+
+    /*border: 1px solid #3a3232;*/
+    /*border-radius: 5px;*/
+
+    background: rgb(255, 255, 255, 0);
+}
+
+.highlights {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow-wrap: anywhere;
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+.event {
+    /*background: beige;*/
+    width: 25%;
+    height: 100%;
+    border: 3px outset;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.block {
-    width: 90%;
-    height: 60%;
-    min-height: 50px;
+.section {
+    /*min-height: 500px;*/
+    display: flex;
+    background: whitesmoke;
+}
 
-    border-radius: 10px;
-
-    background: rgb(255, 255, 255);
+.footer {
+    color: beige;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    background: #2a2a26;
+    padding: 0.8rem;
+    border-top: 2px solid #000000;
+    place-self: end;
 }

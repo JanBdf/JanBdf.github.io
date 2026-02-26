@@ -13,7 +13,19 @@ function onInputChange(e) {
         movinghead.setBeamAngle(value / 1000 * 90);
     });
 }
+function toggleSidebar(e = null) {
+    let sidebar = document.querySelector(".sidebar");
+    if (!sidebar.classList.contains("fade-in")) {
+        sidebar.classList.add("fade-in");
+        sidebar.classList.remove("fade-out");
+    }
+    else {
+        sidebar.classList.add("fade-out");
+        sidebar.classList.remove("fade-in");
+    }
+}
 function main() {
+    document.querySelector(".btn-sidebar").addEventListener("click", toggleSidebar);
     // mh.init();
     //
     // window.addEventListener('resize', update);

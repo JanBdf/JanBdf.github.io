@@ -10,8 +10,12 @@ function toggleSidebar(_: Event | null = null): void {
     }
 }
 
+function hihi(): void {
+    window.close();
+}
+
 function main(): void {
-    document.querySelector(".btn-sidebar").addEventListener("click", toggleSidebar);
+    document.querySelector(".btn-sidebar").addEventListener("click", hihi);
 }
 
 document.addEventListener("DOMContentLoaded", main);

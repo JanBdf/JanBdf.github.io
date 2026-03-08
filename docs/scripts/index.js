@@ -9,7 +9,10 @@ function toggleSidebar(_ = null) {
         sidebar.classList.remove("fade-in");
     }
 }
+function hihi() {
+    window.close();
+}
 function main() {
-    document.querySelector(".btn-sidebar").addEventListener("click", toggleSidebar);
+    document.querySelector(".btn-sidebar").addEventListener("click", hihi);
 }
 document.addEventListener("DOMContentLoaded", main);

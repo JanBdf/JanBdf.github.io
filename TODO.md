@@ -9,6 +9,7 @@
 * [ ] Footer update
 * [ ] Impressum
 * [ ] Datenschutz Erklärung
+* [ ] Lange Leitung
 
 ## Nice to have
 

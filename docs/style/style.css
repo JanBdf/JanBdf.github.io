@@ -208,3 +208,82 @@ body {
     border-top: 2px solid #000000;
     place-self: end;
 }
+
+/* Countdown Timer Style */
+.countdown-container {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: rgba(241, 238, 230, 0.6);
+    border: 2px solid #807e77;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.countdown-title {
+    font-size: min(4vw, 1.5rem);
+    color: #2a2a26;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: min(2vw, 1rem);
+    flex-wrap: wrap;
+}
+
+.countdown-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: min(15vw, 80px);
+}
+
+.countdown-value {
+    font-size: min(10vw, 4rem);
+    font-weight: bold;
+    color: #2a2a26;
+    line-height: 1;
+    font-family: "JetBrainsMono", monospace;
+    text-shadow: 2px 2px 0 rgba(183, 2, 101, 0.1);
+}
+
+.countdown-label {
+    font-size: min(3vw, 0.9rem);
+    color: #807e77;
+    margin-top: 0.3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.countdown-separator {
+    font-size: min(10vw, 3rem);
+    color: #B70265;
+    font-weight: bold;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+}
+
+.countdown-finished {
+    font-size: min(5vw, 2rem);
+    color: #B70265;
+    font-weight: bold;
+    padding: 1rem;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .countdown-container {
+        padding: 1rem;
+    }
+    
+    .countdown-timer {
+        gap: 0.5rem;
+    }
+    
+    .countdown-separator {
+        margin-bottom: 1rem;
+    }
+}

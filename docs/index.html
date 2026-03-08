@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="./style/style.css">
         <link rel="icon" type="image/x-icon" href="./resc/img/icon.png">
         <script src="scripts/index.js" type="module"></script>
+        <script src="scripts/countdown.js"></script>
     </head>
     <body>
         <div id="top"></div>
@@ -32,6 +33,31 @@
                 </div>
                 <div class="block">
                     Technik AG - Gymnasium Schloss Plön
+                </div>
+                
+                <div id="countdown" class="countdown-container">
+                    <div class="countdown-title">Nächstes Event in:</div>
+                    <div class="countdown-timer">
+                        <div class="countdown-unit">
+                            <div class="countdown-value" id="days">00</div>
+                            <div class="countdown-label">Tage</div>
+                        </div>
+                        <div class="countdown-separator">:</div>
+                        <div class="countdown-unit">
+                            <div class="countdown-value" id="hours">00</div>
+                            <div class="countdown-label">Stunden</div>
+                        </div>
+                        <div class="countdown-separator">:</div>
+                        <div class="countdown-unit">
+                            <div class="countdown-value" id="minutes">00</div>
+                            <div class="countdown-label">Minuten</div>
+                        </div>
+                        <div class="countdown-separator">:</div>
+                        <div class="countdown-unit">
+                            <div class="countdown-value" id="seconds">00</div>
+                            <div class="countdown-label">Sekunden</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

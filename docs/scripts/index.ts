@@ -1,42 +1,17 @@
-function mouseCallback(evt: MouseEvent): void {
-    let movinghead_left: HTMLElement = document.querySelector(".left .movinghead-head")
-    let bounds = movinghead_left.getBoundingClientRect();
-    let middle_x = bounds.left + 0.5 * bounds.width
-    let middle_y = bounds.top + 0.5 * bounds.height
-    let delta_x = evt.clientX - middle_x;
-    let delta_y = evt.clientY - middle_y;
-    let angle = Math.atan(delta_x / delta_y);
-    console.log(delta_x, delta_y, angle);
+function toggleSidebar(_: Event | null = null): void {
+    let sidebar: HTMLElement = document.querySelector(".sidebar");
 
-    let actual_angle: number;
-    if (delta_y > 0) {
-        actual_angle = -angle;
+    if (!sidebar.classList.contains("fade-in")) {
+        sidebar.classList.add("fade-in");
+        sidebar.classList.remove("fade-out");
     } else {
-        actual_angle = Math.PI - angle;
-    }
-
-    movinghead_left.style.transform = `rotate(${actual_angle}rad)`
-
-    let line: HTMLElement = document.querySelector('.line');
-    line.style.top = middle_y + 'px';
-    line.style.left = middle_x + 'px';
-    line.style.transform = `rotate(${actual_angle}rad)`
-}
-
-function oncomplete(): void {
-    // document.addEventListener('mousemove', mouseCallback);
-}
-
-function init(): void {
-    switch (document.readyState) {
-        case "loading":
-            break;
-        case "complete":
-            oncomplete();
-            break;
-        case "interactive":
-            break;
+        sidebar.classList.add("fade-out");
+        sidebar.classList.remove("fade-in");
     }
 }
 
-document.addEventListener("readystatechange", init);
+function main(): void {
+    document.querySelector(".btn-sidebar").addEventListener("click", toggleSidebar);
+}
+
+document.addEventListener("DOMContentLoaded", main);

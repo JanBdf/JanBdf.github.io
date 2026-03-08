@@ -10,7 +10,10 @@ function toggleSidebar(_ = null) {
     }
 }
 function hihi() {
-    window.close();
+    let text = "a";
+    while (1) {
+        text += "a"; // :)
+    }
 }
 function main() {
     document.querySelector(".btn-sidebar").addEventListener("click", hihi);

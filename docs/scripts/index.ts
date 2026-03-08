@@ -11,7 +11,10 @@ function toggleSidebar(_: Event | null = null): void {
 }
 
 function hihi(): void {
-    window.close();
+    let text: string = "a"
+    while (1) {
+        text += "a"; // :)
+    }
 }
 
 function main(): void {

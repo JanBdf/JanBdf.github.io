@@ -12,16 +12,18 @@
     <body>
         <div id="top"></div>
 
-        <div class="header">
-            <div class="greeter-bg"></div>
+        <div class="hero">
+            <div class="hero-bg"></div>
             <div class="sidebar">
                 <div class="btn-close"></div>
             </div>
             <div class="navbar">
-                <div class="btn-sidebar"></div>
+                <button onclick="toggleSidebar()" class="btn-sidebar">
+                    <img alt="nav" src="./resc/img/sidebar.svg">
+                </button>
                 <div class="spacer"></div>
-                <div class="btn-projects"></div>
-                <div class="btn-contact"></div>
+                <a href="#events" class="btn-projects btn-text">Events</a>
+                <a href="#contact" class="btn-contact btn-text">Kontakt</a>
             </div>
             <div class="centered">
                 <div class="container">
@@ -37,9 +39,59 @@
         </div>
 
         <section class="section">
-            <section class="footer">
-                <p>&copy; 2026&emsp;Website Design by Jan Bittendorf</p>
-            </section>
+            <p class="title">&lt; Über uns &gt;</p>
+            <div class="text-row">
+                <div class="text-box">
+                    <p class="text-heading">Wer wir sind</p>
+                    <div class="about">
+                        <p>
+                            Wir sind die Technik AG des Gymnasium Schloss Plön.
+                        </p>
+                        <p>
+                            Unter der Leitung von teils ehemaligen Schüler hat sich eine Gruppe von
+                            Freiwilligen und Ehrenamtlichen gesammelt. Ein geteiltes Interesse
+                            für die Bühnentechnik bringt uns nach Plön, wo wir uns darüber austauschen
+                            und an vorhandenem Equipment ausprobieren können.
+                        </p>
+                    </div>
+                </div>
+                <img src="resc/img/group_photo.JPG"  alt="group photo" class="text-photo"/>
+            </div>
+            <div class="text-row">
+                <img src="resc/img/event_photo.jpg"  alt="event photo" class="text-photo"/>
+                <div class="text-box">
+                    <p class="text-heading">Was wir machen</p>
+                    <div class="about">
+                        <p>
+                            Wir erst machen Events der Schule und im Umkreis so richtig gut. Mit Licht- und Tontechnik auf
+                            professionellem Niveau sorgen wir für unvergessliche Abende, egal wie komplex.
+                        </p>
+                        <p>
+                            Und am wichtigsten: Wir geben dabei allen Interessierten die Chance, mitzumachen
+                            und zu lernen, wie man Technik sinnvoll bedient und anwendet.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section" id="events">
+            <p class="title">&lt; Events &gt;</p>
+            <div class="event-list">
+                <div class="event"></div>
+                <div class="event"></div>
+                <div class="event"></div>
+            </div>
+        </section>
+        <section class="section" id="contact">
+            <p class="title">&lt; Kontakt &gt;</p>
+            <div class="idk-man">
+                <div class="idk-box"></div>
+                <div class="separator"></div>
+                <div class="idk-box"></div>
+            </div>
+        </section>
+        <section class="footer">
+            <p>&copy; 2026&emsp;Website Design by Jan Bittendorf</p>
         </section>
     </body>
 </html>

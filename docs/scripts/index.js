@@ -10,6 +10,5 @@ function toggleSidebar(_ = null) {
     }
 }
 function main() {
-    document.querySelector(".btn-sidebar").addEventListener("click", toggleSidebar);
 }
 document.addEventListener("DOMContentLoaded", main);

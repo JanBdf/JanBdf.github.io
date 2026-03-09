@@ -11,7 +11,6 @@ function toggleSidebar(_: Event | null = null): void {
 }
 
 function main(): void {
-    document.querySelector(".btn-sidebar").addEventListener("click", toggleSidebar);
 }
 
 document.addEventListener("DOMContentLoaded", main);
